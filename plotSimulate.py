@@ -20,7 +20,7 @@ class PlotAndSimulateClass:
                 plt.title('X vs Y  Normal Plot')
                 plt.show()
             except ValueError:
-                print("\nError: x and y must be the same size !!!\n\nSorry plotting not possible")
+                print("\nValue Error !!!\n\nSorry plotting not possible. Try Scatter plotting")
                 return False
             
         elif plot_type == '2':
@@ -32,7 +32,7 @@ class PlotAndSimulateClass:
                 plt.title('X vs Y  Scatter Plot')
                 plt.show()
             except ValueError:
-                print("\nError: x and y must be the same size !!!\n\nSorry plotting not possible")
+                print("\nValue Error: x and y must be the same size !!!\n\nSorry plotting not possible. Try Normal plotting")
                 return False
         
     def simulate_data(self, rows, cols):
