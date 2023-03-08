@@ -35,7 +35,7 @@ print('\nWelcome to Multi-function Data Analysis Software\n\nWhich function woul
 while True:
 
     # Display user the menu option and ask for input
-    choice = input(" 1. Data loading functions\n 2. Convert units (g to kg, F to C, cm to m or vice versa)\n 3. Simulate a random dataset\n 4. Exit\n\nPlease choose a function between 1 to 4: ")
+    choice = input(" 1. Data array loading functions\n 2. Convert units (g to kg, F to C, cm to m or vice versa)\n 3. Simulate a random dataset array\n 4. Exit\n\nPlease choose a function between 1 to 4: ")
     
     '''
     If user choose '1' a menu will be initiated where the user can load Data from file path or load data from
@@ -50,7 +50,7 @@ while True:
         while True:
  
             # Display load data menu options and ask for input.     
-            load_choice = input("Load a data from below functions \n\n 1. Load data from file\n 2. Load data from files in the same directory\n 3. Exit to main menu\n 4. Exit\n\nEnter your choice between 1 to 4: ")
+            load_choice = input("Load a data array from below functions \n\n 1. Load data array from file\n 2. Load data array from files in the same directory\n 3. Exit to main menu\n 4. Exit\n\nEnter your choice between 1 to 4: ")
 
             # If user chooce '1' then data will load from the file path that the user input.
             if load_choice == '1':
@@ -62,7 +62,7 @@ while True:
                 while True:
          
                     # Display instructions about the file to user.
-                    print("\n\nImportant Notes:\n * This software loads TXT file only\n"r" * File path might looks like 'C:\Users\user\data.txt'","\n"r" * The 'C:\' represents the root directory of the 'C:' drive", "\n"r" * The 'Users\user' is the path to the user's home directory","\n"r" * The 'data.txt' is the name of the file")
+                    print("\n\nImportant Notes:\n * This software loads only data array TXT file\n * Make sure the data has numerical values only\n * Make sure the data has same number of rows and columns\n"r" * File path might looks like 'C:\Users\user\data.txt'","\n"r" * The 'C:\' represents the root directory of the 'C:' drive", "\n"r" * The 'Users\user' is the path to the user's home directory","\n"r" * The 'data' is the name of the file","\n"r" * The '.txt' is the file type. Don't forget to add after the file name")
           
                     # Receive file path from user.
                     file_path = input("\nEnter the file path / 'b' to go back: ")
@@ -85,35 +85,35 @@ while True:
                         # If data is successfully loaded, display success message and loaded data.
                         if data is not None:
                             print('\nData loading successfull')
-                            print('\nLoaded data:\n',np.nan_to_num(data))
+                            print('\nLoaded data array:\n',np.nan_to_num(data))
                             
                             # Infinite loop to display data functions menu and receive user input.
                             while True:
                                 
                                 # Display data functions menu options and take user input.
-                                func_choice = input("\nPlease choose what do you want to do next\n\n 1. Find the mean of the data\n 2. Find the variance of the data\n 3. Find the max value and it's index of the data\n 4. Find the min value and it's index of the data\n 5. Plot the data\n 6. Go back\n 7. Exit\n\nEnter your choice between 1 to 7: ")
+                                func_choice = input("\nPlease choose what do you want to do next\n\n 1. Find the mean of the data array\n 2. Find the variance of the data array\n 3. Find the max value and it's index of the data array\n 4. Find the min value and it's index of the data array\n 5. Plot the data array\n 6. Go back\n 7. Exit\n\nEnter your choice between 1 to 7: ")
                                  
                                 # If user inputs '1' then it will calculate the mean of the loaded data and display.
                                 if func_choice == '1':
                                     mean = calculator_obj.find_mean(data)
-                                    print('\n\nThe Mean of the loaded data is:', mean)
+                                    print('\n\nThe Mean of the loaded data array is:', mean)
                                 
                                 # If user inputs '2' then it will calculate the variance of the loaded data and display.    
                                 elif func_choice == '2':
                                     variance = calculator_obj.find_variance(data)
-                                    print('\n\nThe Variance of the loaded data is:', variance)
+                                    print('\n\nThe Variance of the loaded data array is:', variance)
                                 
                                 # If user inputs '3' then it will calculate the max value and it's index of the data and display.    
                                 elif func_choice == '3':
                                     max_value, max_index = calculator_obj.find_max_value(data)
-                                    print('\n\nThe Max value of the loaded data is:', max_value)
-                                    print('\nThe Max index of the loaded data is:', max_index)
+                                    print('\n\nThe Max value of the loaded data array is:', max_value)
+                                    print('\nThe Max index of the loaded data array is:', max_index)
                                 
                                 # If user inputs '4' then it will calculate the min value and it's index of the data and display.                                
                                 elif func_choice == '4':
                                     min_value, min_index = calculator_obj.find_min_value(data)
-                                    print('\n\nThe Min value of the loaded data is:', min_value)
-                                    print('\nThe Min index of the loaded data is:', min_index)
+                                    print('\n\nThe Min value of the loaded data array is:', min_value)
+                                    print('\nThe Min index of the loaded data array is:', min_index)
                                 
                                 # If user inputs '5' then it will display a menu for plotting.     
                                 elif func_choice == '5':
@@ -127,7 +127,7 @@ while True:
                                         # If user inputs '1' then it will plot normal plotting.
                                         if plot_type == '1':
                                                      
-                                            print('\nPlotting from loaded data . . .')
+                                            print('\nPlotting from loaded data array. . .')
                                             
                                             # Plot data using the plot function for normal plotting.
                                             n_data = plot_simulate_obj.plot_data(data,plot_type='1')
@@ -142,7 +142,7 @@ while True:
                                         # If user inputs '2' then it will plot scatter plotting.
                                         elif plot_type == '2':
                                                      
-                                            print('\nPlotting from loaded data . . .')
+                                            print('\nPlotting from loaded data array. . .')
                                             
                                             # Plot data using the plot function for scatter plotting.
                                             s_data = plot_simulate_obj.plot_data(data,plot_type='2')
@@ -161,7 +161,7 @@ while True:
                                                                               
                                         # If user inputs '4' then the program ends.    
                                         elif plot_type == '4':   
-                                            print('\n***Thank you***')
+                                            print('\n\nExiting the software . . .\n\n***Thank you***')
                                             sys.exit()    
                                             
                                         # If user inputs anything else rather than 1-4, it will show error message and take back the user to the plot menu loop.                        
@@ -176,7 +176,7 @@ while True:
                                 
                                 # If user inputs '7' then the program ends.
                                 elif func_choice == '7':
-                                    print('\n***Thank you***')
+                                    print('\n\nExiting the software . . .\n\n***Thank you***')
                                     sys.exit()
                                 
                                 # If user inputs anything else rather than 1-7, it will show error message and take back the user to the data function loop.            
@@ -186,7 +186,7 @@ while True:
                     
                     # If user inputs wrong file path then it will display  possible errors and ask the user to input the file path again.                   
                     else:
-                        print("\nWrong Input!!!\n\nPossible Errors:\n * The file doesn't exist\n * It's not a .txt file \n * Missing '.txt' at the end of the file path\n\nPlease check the instruction and enter the file path again.")
+                        print("\nWrong Input!!!\n\nPossible Errors:\n * The file doesn't exist\n * It's not a TXT file \n * Missing '.txt' at the end of the file path\n\nPlease check the instruction and enter the file path again.")
                         continue
                     break
             
@@ -200,7 +200,7 @@ while True:
                 while True:
                     
                     # Display instructions about the file to user.
-                    print("\n\nImportant Notes:\n * This software loads TXT file only\n * Make sure the file is in the same directory\n * Please add '.txt' after the file name\n * File name input might looks like 'data.txt'")
+                    print("\n\nImportant Notes:\n * This software loads only data array TXT file\n * Make sure the data has numerical values only\n * Make sure the data has same number of rows and columns\n * Make sure the file is in the same directory as the code file\n * File name input might looks like 'data.txt'\n * The 'data' is the name of the file\n * The '.txt' is the file type. Don't forget to add after the file name")
                     
                     # Receive file name from user.
                     file_name = input("\nEnter the file name / 'b' to go back: ")
@@ -223,35 +223,35 @@ while True:
                         # If data is successfully loaded, display success message and loaded data.
                         if data is not None:
                             print('\nData loading successfull')
-                            print('\nLoaded data:\n',np.nan_to_num(data))
+                            print('\nLoaded data array:\n',np.nan_to_num(data))
                             
                             # Infinite loop to display data functions menu and receive user input.
                             while True:
                                 
                                 # Display data functions menu options and take user input.
-                                func_choice = input("\nPlease choose what do you want to do next\n\n 1. Find the mean of the data\n 2. Find the variance of the data\n 3. Find the max value and it's index of the data\n 4. Find the min value and it's index of the data\n 5. Plot the data\n 6. Go back\n 7. Exit\n\nEnter your choice between 1 to 7: ")
+                                func_choice = input("\nPlease choose what do you want to do next\n\n 1. Find the mean of the data array\n 2. Find the variance of the data array\n 3. Find the max value and it's index of the data array\n 4. Find the min value and it's index of the data array\n 5. Plot the data array\n 6. Go back\n 7. Exit\n\nEnter your choice between 1 to 7: ")
                                 
                                 # If user inputs '1' then it will calculate the mean of the loaded data and display.
                                 if func_choice == '1':
                                     mean = calculator_obj.find_mean(data)
-                                    print('\n\nThe Mean of the loaded data is:', mean)
+                                    print('\n\nThe Mean of the loaded data array is:', mean)
                                 
                                 # If user inputs '2' then it will calculate the variance of the loaded data and display.
                                 elif func_choice == '2':
                                     variance = calculator_obj.find_variance(data)
-                                    print('\n\nThe Variance of the loaded data is:', variance)
+                                    print('\n\nThe Variance of the loaded data array is:', variance)
                                 
                                 # If user inputs '3' then it will calculate the max value and it's index of the data and display.   
                                 elif func_choice == '3':
                                     max_value, max_index = calculator_obj.find_max_value(data)
-                                    print('\n\nThe Max value of the loaded data is:', max_value)
-                                    print('\nThe Max index of the loaded data is:', max_index)
+                                    print('\n\nThe Max value of the loaded data array is:', max_value)
+                                    print('\nThe Max index of the loaded data array is:', max_index)
                                                                 
                                 # If user inputs '4' then it will calculate the min value and it's index of the data and display. 
                                 elif func_choice == '4':
                                     min_value, min_index = calculator_obj.find_min_value(data)
-                                    print('\n\nThe Min value of the loaded data is:', min_value)
-                                    print('\nThe Min index of the loaded data is:', min_index)
+                                    print('\n\nThe Min value of the loaded data array is:', min_value)
+                                    print('\nThe Min index of the loaded data array is:', min_index)
                                 
                                 # If user inputs '5' then it will display a menu for plotting.     
                                 elif func_choice == '5':
@@ -265,7 +265,7 @@ while True:
                                         # If user inputs '1' then it will plot normal plotting.
                                         if plot_type == '1':
                                                      
-                                            print('\nPlotting from loaded data . . .')
+                                            print('\nPlotting from loaded data array. . .')
                                             
                                             # Plot data using the plot function for normal plotting..
                                             n_data = plot_simulate_obj.plot_data(data,plot_type='1')
@@ -280,7 +280,7 @@ while True:
                                         # If user inputs '2' then it will plot scatter plotting.
                                         elif plot_type == '2':
                                                      
-                                            print('\nPlotting from loaded data . . .')
+                                            print('\nPlotting from loaded data array. . .')
                                             
                                             # Plot data using the plot function for scatter plotting.
                                             s_data = plot_simulate_obj.plot_data(data,plot_type='2')
@@ -299,7 +299,7 @@ while True:
                                                                               
                                         # If user inputs '4' then the program ends.   
                                         elif plot_type == '4':   
-                                            print('\n***Thank you***')
+                                            print('\n\nExiting the software . . .\n\n***Thank you***')
                                             sys.exit()    
                                         
                                         # If user inputs anything else rather than 1-4, it will show error message and take back the user to the plot menu loop.
@@ -314,7 +314,7 @@ while True:
                                 
                                 # If user inputs '7' then the program ends.
                                 elif func_choice == '7':
-                                    print('\n***Thank you***')
+                                    print('\n\nExiting the software . . .\n\n***Thank you***')
                                     sys.exit()
                                 
                                 # If user inputs anything else rather than 1-7, it will show error message and take back the user to the data function loop.                
@@ -323,7 +323,7 @@ while True:
                                     continue
                     # If user inputs wrong file path then it will display  possible errors and ask the user to input the file path again.                      
                     else:
-                        print("\nWrong Input!!!\n\nPossible Errors:\n * The file doesn't exist\n * It's not a .txt file \n * Missing '.txt' at the end of the file name\n\nPlease check the instruction and enter the file name again.")
+                        print("\nWrong Input!!!\n\nPossible Errors:\n * The file doesn't exist\n * It's not a TXT file \n * Missing '.txt' at the end of the file name\n\nPlease check the instruction and enter the file name again.")
                         continue
                     break    
                       
@@ -334,7 +334,7 @@ while True:
             
             # If user inputs '4' then the program ends.
             elif load_choice == '4':
-                print('\n***Thank you***')
+                print('\n\nExiting the software . . .\n\n***Thank you***')
                 sys.exit()
                 
             
@@ -386,12 +386,12 @@ while True:
             
             # If user inputs '4' then the program ends.    
             elif con_choice == '8':
-                print('\n***Thank you***')
+                print('\n\nExiting the software . . .\n\n***Thank you***')
                 sys.exit()    
             
             # If user inputs anything else rather than 1-8, it will show error message and take back the user to the Convert units menu loop.                    
             else:
-                print('\nWrong Input!!!\n\Please enter numerical value 1-8')
+                print('\nWrong Input!!!\n\nPlease enter numerical value 1-8')
                 continue
            
             # Infinite loop to get input from user to convert the value.
@@ -428,7 +428,7 @@ while True:
         while True:
             
             # Ask user for number of rows for simulated data.
-            rows = input("Please enter the row size of the random dataset / 'e' for exit to main menu: ")
+            rows = input("Please enter the row size of the random dataset array/ 'e' for exit to main menu: ")
             
             # If user wants to exit to main menu then break the loop.
             if rows == 'e':
@@ -451,7 +451,7 @@ while True:
             while True:
                 
                 # Ask user for number of columns for simulated data.
-                cols = input("Please enter the column size of the random dataset / 'e' for exit to main menu: ")
+                cols = input("Please enter the column size of the random dataset array/ 'e' for exit to main menu: ")
                 
                 # If user wants to exit to main menu then break the loop.
                 if cols == 'e':
@@ -471,21 +471,21 @@ while True:
         if rows == 'e' or cols == 'e':
             print('\nExiting to main menu ...\n\nWhich function would you like to perform?')
         
-        # If rows and cols both are intiger number then it simulates random datasets and displays that.    
+        # If rows and cols both are intiger number then it simulates random dataset array and displays that.    
         else:
             
-            # Simulates random data.
+            # Simulates random data array.
             simulated_data = plot_simulate_obj.simulate_data(rows,cols)
             print ('\n\nSimulating random dataset successfull')
             
             # Display random data as array
-            print('\n\nSimulated data:\n',simulated_data)
+            print('\n\nSimulated random dataset array:\n',simulated_data)
             
             # Infinite loop to display saveplot menu.
             while True:
                 
                 # Diaplay menu options and ask for input.
-                save_plot_choice = input("\nPlease choose what do you want to do next\n\n 1. Save random dataset\n 2. Plot random dataset\n 3. Exit to main menu\n 4. Exit \n\nEnter your choice between 1 to 4: ")
+                save_plot_choice = input("\nPlease choose what do you want to do next\n\n 1. Save random dataset array\n 2. Plot random dataset array\n 3. Exit to main menu\n 4. Exit \n\nEnter your choice between 1 to 4: ")
                 
                 # If user inputs '1' then it will ask for the file name and show go back option.
                 if  save_plot_choice == '1':
@@ -525,7 +525,7 @@ while True:
                         # If user inputs '1' then it will plot normal plotting.
                         if plot_type == '1':
                                      
-                            print('\nPlotting random dataset . . .')
+                            print('\nPlotting random dataset array . . .')
                             
                             # Plot data using the plot function for normal plotting.
                             n_data = plot_simulate_obj.plot_data(simulated_data,plot_type='1')
@@ -540,7 +540,7 @@ while True:
                         # If user inputs '2' then it will plot scatter plotting.
                         elif plot_type == '2':
                                      
-                            print('\nPlotting random dataset . . .')
+                            print('\nPlotting random dataset array . . .')
                             
                             # Plot data using the plot function for scatter plotting.
                             s_data = plot_simulate_obj.plot_data(simulated_data,plot_type='2')
@@ -559,7 +559,7 @@ while True:
                                                               
                         # If user inputs '4' then the program ends.       
                         elif plot_type == '4':   
-                            print('\n***Thank you***')
+                            print('\n\nExiting the software . . .\n\n***Thank you***')
                             sys.exit()    
                         
                         # If user inputs anything else rather than 1-4, it will show error message and take back the user to the plot menu loop.    
@@ -574,7 +574,7 @@ while True:
                 
                 # If user inputs '4' then the program ends. 
                 elif save_plot_choice == '4':
-                    print('\n***Thank you***')
+                    print('\n\nExiting the software . . .\n\n***Thank you***')
                     sys.exit()    
                 
                 # If user inputs anything else rather than 1-4, it will show error message and take back the user to the saveplot menu loop.
@@ -584,7 +584,7 @@ while True:
                   
     # If user inputs '4' then the program ends or exits from main menu.             
     elif choice == '4':
-        print('\n***Thank you***')
+        print('\n\nExiting the software . . .\n\n***Thank you***')
         sys.exit() 
     
         
@@ -598,7 +598,7 @@ while True:
 This code is written with many helps from youtube, class lectures, w3schools.com, programiz.com, numpy.org,
 learnpython.org, geeksforgeeks.org and other sites.
 
-This code is written as a project for the Python Course at the University of Siegen.
+This code is written as a project work for the Python Course at the University of Siegen.
 
 Feel free to use this code.
 

@@ -18,7 +18,7 @@ any file path. And also validate data type inside the file.
 '''
 class GetDataClass:
     
-    # A function which will load data from any file path provided by the user.
+    # A function which will load data array from any file path provided by the user.
     def load_data_from_file(self, file_path):
         ''' 
         Data is loaded from the specified file using numpy.genfromtxt with 'try'
@@ -34,7 +34,7 @@ class GetDataClass:
             print("\nError: Not all lines have the same number of columns!!!")
             return False
 
-    # A function which will load data from file in the same directory where the main code is loaded.
+    # A function which will load data array from file in the same directory where the main code is loaded.
     def load_data_from_directory(self, file_name):
 
         # The current directory of the script is obtained. 
