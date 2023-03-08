@@ -484,7 +484,7 @@ while True:
             # Infinite loop to display saveplot menu.
             while True:
                 
-                # Diaplay menu options and ask for input.
+                # Diaplay saveplot menu options and ask for input.
                 save_plot_choice = input("\nPlease choose what do you want to do next\n\n 1. Save random dataset array\n 2. Plot random dataset array\n 3. Exit to main menu\n 4. Exit \n\nEnter your choice between 1 to 4: ")
                 
                 # If user inputs '1' then it will ask for the file name and show go back option.
