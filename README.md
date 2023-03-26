@@ -10,13 +10,13 @@ This software is designed to perform multi-functional data analysis tasks such a
 
 This software has one main code Python file named main.py and 3 Class Python files named getData.py, calculator.py and plotSimulate.p. In getData.py file there is GetDataClass, in calculator.py file there is CalculatorClass and in plotSimulate.p file there is PlotAndSimulateClass.
 
-GetDataClass
+GetDataClass:
 This class contains methods for loading data from files and directories, as well as validating the data. The following methods are available:
 * load_data_from_file(self, file_path: loads data from any file path and returns it as a NumPy array
 * load_data_from_directory(self, file_name): loads data from all files in the same directory of the main Python code and returns it as a list of NumPy arrays.
 * validate_data(self, data): validates the data by checking for NaN values, ensuring all values are numbers and file is not empty
 
-CalculatorClass
+CalculatorClass:
 This class contains methods for performing mathematical calculations on data, such as converting units, calculating statistical values, and finding max and min values. The following methods are available:
 * g_to_kg(self, weight): converts grams to kilograms.
 * kg_to_g(self, weight): converts kilograms to grams.
@@ -29,7 +29,7 @@ This class contains methods for performing mathematical calculations on data, su
 * find_max_value(self,data): finds the maximum value and its index in an array of data using NumPy.
 * find_min_value(self,data): finds the minimum value and its index in an array of data using NumPy.
 
-PlotAndSimulateClass
+PlotAndSimulateClass:
 This class contains methods for visualizing data, such as plotting data and simulating random dataset array. And also saving the data into the main directory. The following methods are available:
 * plot_data(self, data, plot_type): plots the data in a normal and scatter format.
 * def simulate_data(self, rows, cols): simulates a random dataset and returns it as a NumPy array.

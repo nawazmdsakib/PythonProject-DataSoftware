@@ -50,7 +50,7 @@ while True:
         while True:
  
             # Display load data menu options and ask for input.     
-            load_choice = input("Load a data array from below functions \n\n 1. Load data array from file\n 2. Load data array from files in the same directory\n 3. Exit to main menu\n 4. Exit\n\nEnter your choice between 1 to 4: ")
+            load_choice = input("\nLoad a data array from below functions \n\n 1. Load data array from file\n 2. Load data array from files in the same directory\n 3. Exit to main menu\n 4. Exit\n\nEnter your choice between 1 to 4: ")
 
             # If user chooce '1' then data will load from the file path that the user input.
             if load_choice == '1':
